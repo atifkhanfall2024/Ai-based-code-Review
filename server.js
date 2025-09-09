@@ -1,5 +1,11 @@
 const app = require('./src/App')
+const Connectdb = require('./src/config/Database')
 
-app.listen(3000 , ()=>{
+Connectdb().then(()=>{
+    console.log('Connection is Success');
+    app.listen(3000 , ()=>{
     console.log('Server is listening');
+})
+}).catch((err)=>{
+    console.log('Connection is Not eastablished');
 })
