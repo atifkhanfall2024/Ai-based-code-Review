@@ -2,8 +2,8 @@ const GrokChat = require('../services/ai.services')
 module.exports.getResponse = async(req,res)=>{
 try{
         const value = req.query.value
-
-    if(!value){
+//console.log("Received value:", JSON.stringify(value));
+    if(!value || value.trim() === ""){
         return res.status(401).json({message: ' Please Enter Prompt ' })
     }
 
