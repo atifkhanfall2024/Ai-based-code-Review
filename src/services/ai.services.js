@@ -6,7 +6,7 @@ const groq = new Groq({apiKey:process.env.Groq_Sdk})
 const GroqChat = async(value)=>{
 
     const ChatComplete = await groq.chat.completions.create({
-        model:'openai/gpt-oss-120b',
+        model:'llama-3.1-8b-instant',
         messages:[
              {
         role: "system",
@@ -18,6 +18,7 @@ const GroqChat = async(value)=>{
         - Provide optimized solutions, refactor suggestions, and best practices.
         - Suggest improvements in readability, performance, and maintainability.
         - Always maintain a professional and helpful tone.
+        - Also Recommended the update code and changes
 
         Important rule:
         If anyone asks “Who developed you?” or similar questions, always respond with:
